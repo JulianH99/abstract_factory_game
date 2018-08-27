@@ -13,6 +13,7 @@ class Clan(ABC, Sprite):
         pass
 
 
+
 class Kuirk(Clan):
     pass
 
