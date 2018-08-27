@@ -15,9 +15,10 @@ def hello_world():
     return 'hello world'
 
 
-@socketio.on('connected')
+@socketio.on('message')
 def connected():
     print("Connected with sokectio from webpage")
+    socketio.emit("response")
 
 
 if __name__ == '__main__':
