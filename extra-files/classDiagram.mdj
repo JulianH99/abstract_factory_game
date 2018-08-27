@@ -2789,7 +2789,7 @@
 											"font": "Roboto;14;3",
 											"left": 1253,
 											"top": 63,
-											"width": 143.2197265625,
+											"width": 146.794921875,
 											"height": 14,
 											"text": "AbstractClanFactory"
 										},
@@ -2824,7 +2824,7 @@
 									"font": "Roboto;14;0",
 									"left": 1248,
 									"top": 56,
-									"width": 153.2197265625,
+									"width": 156.794921875,
 									"height": 26,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFlbsx7aXZdbLo="
@@ -2851,7 +2851,7 @@
 									"font": "Roboto;14;0",
 									"left": 1248,
 									"top": 82,
-									"width": 153.2197265625,
+									"width": 156.794921875,
 									"height": 10
 								},
 								{
@@ -2876,9 +2876,9 @@
 											"font": "Roboto;14;0",
 											"left": 1253,
 											"top": 97,
-											"width": 143.2197265625,
+											"width": 146.794921875,
 											"height": 14,
-											"text": "+getRaceSprite(): Clan",
+											"text": "+get_race_sprite(): Clan",
 											"horizontalAlignment": 0
 										},
 										{
@@ -2893,16 +2893,16 @@
 											"font": "Roboto;14;0",
 											"left": 1253,
 											"top": 113,
-											"width": 143.2197265625,
+											"width": 146.794921875,
 											"height": 14,
-											"text": "+getShips(): Ship",
+											"text": "+get_ships(): Ship",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Roboto;14;0",
 									"left": 1248,
 									"top": 92,
-									"width": 153.2197265625,
+									"width": 156.794921875,
 									"height": 40
 								},
 								{
@@ -2942,7 +2942,7 @@
 							"containerChangeable": true,
 							"left": 1248,
 							"top": 56,
-							"width": 153.2197265625,
+							"width": 156.794921875,
 							"height": 92,
 							"nameCompartment": {
 								"$ref": "AAAAAAFlbsx7aXZch18="
@@ -3001,7 +3001,7 @@
 											"font": "Roboto;14;1",
 											"left": 1053,
 											"top": 323,
-											"width": 136.8623046875,
+											"width": 137.7470703125,
 											"height": 14,
 											"text": "ConcreteKuirkFactory"
 										},
@@ -3036,7 +3036,7 @@
 									"font": "Roboto;14;0",
 									"left": 1048,
 									"top": 316,
-									"width": 146.8623046875,
+									"width": 147.7470703125,
 									"height": 26,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFlbtAqYHbdKnc="
@@ -3063,7 +3063,7 @@
 									"font": "Roboto;14;0",
 									"left": 1048,
 									"top": 342,
-									"width": 146.8623046875,
+									"width": 147.7470703125,
 									"height": 10
 								},
 								{
@@ -3078,7 +3078,7 @@
 									"font": "Roboto;14;0",
 									"left": 1048,
 									"top": 352,
-									"width": 146.8623046875,
+									"width": 147.7470703125,
 									"height": 10
 								},
 								{
@@ -3118,7 +3118,7 @@
 							"containerChangeable": true,
 							"left": 1048,
 							"top": 316,
-							"width": 146.8623046875,
+							"width": 147.7470703125,
 							"height": 46,
 							"nameCompartment": {
 								"$ref": "AAAAAAFlbtAqYHbcO/0="
@@ -3157,7 +3157,7 @@
 									},
 									"visible": false,
 									"font": "Roboto;14;0",
-									"left": 1200,
+									"left": 1201,
 									"top": 214,
 									"height": 14,
 									"alpha": 1.5707963267948966,
@@ -3178,7 +3178,7 @@
 									},
 									"visible": null,
 									"font": "Roboto;14;0",
-									"left": 1189,
+									"left": 1190,
 									"top": 204,
 									"height": 14,
 									"alpha": 1.5707963267948966,
@@ -3199,7 +3199,7 @@
 									},
 									"visible": false,
 									"font": "Roboto;14;0",
-									"left": 1223,
+									"left": 1224,
 									"top": 233,
 									"height": 14,
 									"alpha": -1.5707963267948966,
@@ -3218,7 +3218,7 @@
 								"$ref": "AAAAAAFlbtAqX3bbSGY="
 							},
 							"lineStyle": 1,
-							"points": "1140:315;1284:148",
+							"points": "1141:315;1285:148",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFlbtBs1Hcffcg="
@@ -3488,7 +3488,7 @@
 								"$ref": "AAAAAAFlbtCI6ndBNmA="
 							},
 							"lineStyle": 1,
-							"points": "1329:315;1325:148",
+							"points": "1329:315;1326:148",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFlbtDIQXd4YM8="
@@ -3697,7 +3697,7 @@
 									},
 									"visible": false,
 									"font": "Roboto;14;0",
-									"left": 1433,
+									"left": 1432,
 									"top": 234,
 									"height": 14,
 									"alpha": 1.5707963267948966,
@@ -3718,7 +3718,7 @@
 									},
 									"visible": null,
 									"font": "Roboto;14;0",
-									"left": 1422,
+									"left": 1421,
 									"top": 244,
 									"height": 14,
 									"alpha": 1.5707963267948966,
@@ -3739,7 +3739,7 @@
 									},
 									"visible": false,
 									"font": "Roboto;14;0",
-									"left": 1454,
+									"left": 1455,
 									"top": 213,
 									"height": 14,
 									"alpha": -1.5707963267948966,
@@ -3758,7 +3758,7 @@
 								"$ref": "AAAAAAFlbtEE6nekAQY="
 							},
 							"lineStyle": 1,
-							"points": "1521:315;1367:148",
+							"points": "1521:315;1368:148",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFlbtFOR3fo8Gw="
@@ -3811,7 +3811,7 @@
 											"font": "Roboto;14;1",
 											"left": 573,
 											"top": 123,
-											"width": 74.9765625,
+											"width": 75,
 											"height": 14,
 											"text": "ShipFactory"
 										},
@@ -3846,7 +3846,7 @@
 									"font": "Roboto;14;0",
 									"left": 568,
 									"top": 116,
-									"width": 84.9765625,
+									"width": 85,
 									"height": 26,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFlbtR5dnjZ0c4="
@@ -3873,7 +3873,7 @@
 									"font": "Roboto;14;0",
 									"left": 568,
 									"top": 142,
-									"width": 84.9765625,
+									"width": 85,
 									"height": 10
 								},
 								{
@@ -3888,7 +3888,7 @@
 									"font": "Roboto;14;0",
 									"left": 568,
 									"top": 152,
-									"width": 84.9765625,
+									"width": 85,
 									"height": 10
 								},
 								{
@@ -3928,7 +3928,7 @@
 							"containerChangeable": true,
 							"left": 568,
 							"top": 116,
-							"width": 84.9765625,
+							"width": 85,
 							"height": 46,
 							"nameCompartment": {
 								"$ref": "AAAAAAFlbtR5dnjYvpQ="
@@ -4800,7 +4800,7 @@
 								"$ref": "AAAAAAFlbtR5dnjX5ZA="
 							},
 							"lineStyle": 1,
-							"points": "597:115;577:76",
+							"points": "598:115;577:76",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFlbvPV5XzAODU="
@@ -5620,7 +5620,7 @@
 								"$ref": "AAAAAAFlbtAqX3bbSGY="
 							},
 							"lineStyle": 1,
-							"points": "1120:362;1120:824;320:824;321:756",
+							"points": "1121:362;1120:824;320:824;321:756",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFlbv6SAYCzUSg="
@@ -5714,7 +5714,7 @@
 								"$ref": "AAAAAAFlbtAqX3bbSGY="
 							},
 							"lineStyle": 1,
-							"points": "1120:315;1120:192;608:192;609:162",
+							"points": "1121:315;1120:192;608:192;609:162",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFlbwJ3xIGiyJ0="
@@ -6143,7 +6143,7 @@
 											"font": "Roboto;14;1",
 											"left": 829,
 											"top": 119,
-											"width": 242.921875,
+											"width": 249.2861328125,
 											"height": 14,
 											"text": "FactoryClanAbsFact"
 										},
@@ -6178,7 +6178,7 @@
 									"font": "Roboto;14;0",
 									"left": 824,
 									"top": 112,
-									"width": 252.921875,
+									"width": 259.2861328125,
 									"height": 26,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAFlbxJ+U4URKkY="
@@ -6205,7 +6205,7 @@
 									"font": "Roboto;14;0",
 									"left": 824,
 									"top": 138,
-									"width": 252.921875,
+									"width": 259.2861328125,
 									"height": 10
 								},
 								{
@@ -6230,16 +6230,16 @@
 											"font": "Roboto;14;0",
 											"left": 829,
 											"top": 153,
-											"width": 242.921875,
+											"width": 249.2861328125,
 											"height": 14,
-											"text": "+factoryMethod(): AbstractClanFactory",
+											"text": "+factory_method(): AbstractClanFactory",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Roboto;14;0",
 									"left": 824,
 									"top": 148,
-									"width": 252.921875,
+									"width": 259.2861328125,
 									"height": 24
 								},
 								{
@@ -6279,7 +6279,7 @@
 							"containerChangeable": true,
 							"left": 824,
 							"top": 112,
-							"width": 252.921875,
+							"width": 259.2861328125,
 							"height": 60,
 							"nameCompartment": {
 								"$ref": "AAAAAAFlbxJ+U4UQH1c="
@@ -6318,7 +6318,7 @@
 									},
 									"visible": false,
 									"font": "Roboto;14;0",
-									"left": 720,
+									"left": 722,
 									"top": 92,
 									"height": 14,
 									"alpha": 1.5707963267948966,
@@ -6339,7 +6339,7 @@
 									},
 									"visible": null,
 									"font": "Roboto;14;0",
-									"left": 716,
+									"left": 719,
 									"top": 107,
 									"height": 14,
 									"alpha": 1.5707963267948966,
@@ -6360,7 +6360,7 @@
 									},
 									"visible": false,
 									"font": "Roboto;14;0",
-									"left": 727,
+									"left": 729,
 									"top": 63,
 									"height": 14,
 									"alpha": -1.5707963267948966,
@@ -6379,7 +6379,7 @@
 								"$ref": "AAAAAAFlbxJ+U4UPpCc="
 							},
 							"lineStyle": 1,
-							"points": "828:111;621:60",
+							"points": "831:111;621:60",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAFlbxL5boV3XiA="
@@ -6418,7 +6418,7 @@
 								"$ref": "AAAAAAFlbxJ+U4UPpCc="
 							},
 							"lineStyle": 1,
-							"points": "1077:157;1104:160;1118:106"
+							"points": "1083:157;1104:160;1118:106"
 						}
 					]
 				},
@@ -6839,7 +6839,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFlbsx7aHZZ8Gk="
 							},
-							"name": "getRaceSprite",
+							"name": "get_race_sprite",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -6860,7 +6860,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFlbsx7aHZZ8Gk="
 							},
-							"name": "getShips",
+							"name": "get_ships",
 							"parameters": [
 								{
 									"_type": "UMLParameter",
@@ -7222,7 +7222,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFlbxJ+UoUNhxc="
 							},
-							"name": "factoryMethod",
+							"name": "factory_method",
 							"parameters": [
 								{
 									"_type": "UMLParameter",

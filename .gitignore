@@ -1,5 +1,6 @@
+.idea/
 /**/__pycache__/
-server/.mypy_cache
+**/.mypy_cache/
 
 /client/node_modules/
 /client/yarn-error.log

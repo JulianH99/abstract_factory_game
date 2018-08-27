@@ -41,7 +41,7 @@ class User:
     __name: str
     __player: Player
 
-    def __init__(self, name: str):
+    def __init__(self, name: str) -> None:
         self.__name = name
 
     @property
