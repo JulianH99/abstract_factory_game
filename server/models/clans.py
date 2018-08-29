@@ -13,11 +13,11 @@ class Clan(Sprite, metaclass=ABCMeta):
         pass
 
     @property
-    def ships(self) -> List[ships]:
+    def ships(self) -> List[Ship]:
         return self.__ships
 
     @ships.setter
-    def name(self, new_ships: List[ships]):
+    def ships(self, new_ships: List[ships]):
         self.__ships = new_ships
 
     @property
@@ -25,8 +25,9 @@ class Clan(Sprite, metaclass=ABCMeta):
         return self.__specialized_attributes
 
     @specialized_attributes.setter
-    def name(self, new_specialized_attributes: Dict[str, int]):
+    def specialized_attributes(self, new_specialized_attributes: Dict[str, int]):
         self.__specialized_attributes = new_specialized_attributes
+
 
 class Kuirk(Clan):
     pass

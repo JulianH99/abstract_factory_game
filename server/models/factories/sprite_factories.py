@@ -21,8 +21,8 @@ class FactoryClanAbsFact(SpriteFactory):
         class FactoryClanAbsFact
     """
 
-    @staticmethod
-    def factory_method(self, clan) -> AbstractClanFactory:
+    @classmethod
+    def factory_method(cls, clan) -> AbstractClanFactory:
         pass
 
 
@@ -31,8 +31,8 @@ class PlayerFactory(SpriteFactory):
         class PlayerFactory
     """
 
-    @staticmethod
-    def factory_method(self, gender) -> Player:
+    @classmethod
+    def factory_method(cls, gender) -> Player:
         pass
 
 

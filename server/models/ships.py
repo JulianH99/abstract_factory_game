@@ -34,12 +34,12 @@ class Ship(Sprite, metaclass=ABCMeta):
         self.__resistance = new_attack
 
     @property
-    def accesories(self) -> List[object]:
-        return self.__accesories
+    def accessories(self) -> List[object]:
+        return self.__accessories
 
-    @accesories.setter
-    def accesories(self, new_accesories: List[object]):
-        self.__accesories = new_accesories
+    @accessories.setter
+    def accessories(self, new_accessories: List[object]):
+        self.__accessories = new_accessories
 
 
 class AgileShip(Ship):

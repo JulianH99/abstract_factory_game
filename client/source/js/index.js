@@ -1,7 +1,7 @@
 
 import Phaser from 'phaser';
 import Scene1 from './scenes/Scene1';
-import Socket from './handlers/Socket';
+//import Socket from './handlers/Socket';
 import '../scss/main.scss';
 
 // import SocketIO from 'socket.io-client'

@@ -9,20 +9,38 @@ export default class Scene1 extends Phaser.Scene{
     }
 
     preload() {
-        this.load.image('mario', './assets/mario.gif');
+        this.load.image('male', './assets/male.png');
+        this.load.image('female', './assets/female.png');
+        this.load.image('mario', './assets/mario.png');
     }
 
     create() {
+        let centerX = window.innerWidth/2;
+        console.log(centerX);
+        let imageWidth = 200;
+
+        this.chooseGenderText = this.add.text(centerX - 100, 50, 'Escoge tu genero', {
+            fontFamily: 'Arial',
+            fontSize: '30px'
+        });
+
+        this.maleImg = this.add.image(centerX - 100, 300, 'male');
+        this.maleImg.displayWidth = imageWidth;
+        this.maleImg.scaleY = this.maleImg.scaleX;
 
 
-        this.text = this.add.text(0, 0, "Welcome to my games");
+        this.femaleImg = this.add.image(centerX + 100, 300, 'female');
+        this.femaleImg.displayWidth = imageWidth + 50;
+        this.femaleImg.scaleY = this.femaleImg.scaleX;
+        
+        this.maleImg.setInteractive();
+        this.femaleImg.setInteractive();
 
-        this.D = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+        this.input.on('gameobjectdown', this.onObjectDown);
+    }
 
-        socket.on('response', () => {
-            console.log('response from server');
-            this.add.image(Phaser.Math.RND.integerInRange(100, 500), 100, 'mario');
-        })
+    onObjectDown(pointer, gameObject) {
+
     }
 
     update() {
