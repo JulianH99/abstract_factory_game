@@ -40,9 +40,9 @@ class Player(Sprite):
         return self.__gender
 
     def get_json(self):
-        name = Sprite.sprite_name
-        id = Sprite.id
-        gender = Player.gender()
+        name = self.sprite_name
+        id = self.id
+        gender = self.gender()
 
         return jsonify(sprite_name=name,
                        id=id,

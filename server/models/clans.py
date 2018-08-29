@@ -32,8 +32,8 @@ class Clan(Sprite, metaclass=ABCMeta):
         self.__specialized_attributes = new_specialized_attributes
 
     def get_json(self):
-        name = Sprite.sprite_name
-        id = Sprite.id
+        name = self.sprite_name
+        id = self.id
 
         return jsonify(name=name,
                        id=id)

@@ -46,11 +46,11 @@ class Ship(Sprite, metaclass=ABCMeta):
 
     def get_json(self):
         #__accessories: List[object]
-        name = Sprite.sprite_name
-        id = Sprite.id
-        speed = Ship.speed
-        resistance = Ship.resistance
-        attack = Ship.attack
+        name = self.sprite_name
+        id = self.id
+        speed = self.speed
+        resistance = self.resistance
+        attack = self.attack
         accesories = List[object] = None
 
         return jsonify(sprite_name=name,
