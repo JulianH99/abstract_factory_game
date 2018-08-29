@@ -3,6 +3,7 @@ from flask_cors import CORS, cross_origin
 from flask_socketio import SocketIO
 
 from .models.factories.sprite_factories import ShipFactory
+from .models.base  import Sprite, Player
 
 app = Flask(__name__)
 
@@ -16,10 +17,16 @@ socketio = SocketIO(app)
 def hello_world():
     return 'hello world'
 
+
 @app.route('/get_group_of/<gender>')
 @cross_origin()
 def get_group_of(gender: str):
     print(gender)
+    sprite = Player(gender)
+
+    sprite.sprite_name = "My name"
+
+    return sprite.get_json()
 
 
 @socketio.on('message')

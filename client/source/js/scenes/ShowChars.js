@@ -14,7 +14,7 @@ export default class ShowChars extends Phaser.Scene {
     }
 
     async preload() {
-        await this.getCharsInfo(this.sys._GENDER);
+        await this.getCharsInfo(this.sys.game._GENDER);
 
         let gender = this.sys.game._GENDER;
         let prefix = '';

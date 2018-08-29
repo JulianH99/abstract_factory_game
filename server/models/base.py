@@ -8,41 +8,48 @@ class Sprite(ABC):
     """
         Class Sprite
     """
-    __id: int
-    __sprite_name: str
+    
+    _id = 0
+    _sprite_name = ''
+
+    def __init__(self):
+        self._id = 0
+        self._sprite_name = ''
 
     @abstractmethod
     def get_json(self): pass
 
     @property
     def id(self) -> int:
-        return self.__id
+        return self._id
 
     @property
     def sprite_name(self) -> str:
-        return self.__sprite_name
+        return self._sprite_name
 
     @sprite_name.setter
     def sprite_name(self, new_sprite_name):
-        if new_sprite_name == '':
-            raise Exception("sprite name cannot be empty")
-        self.__sprite_name = new_sprite_name
+        
+        self._sprite_name = new_sprite_name
 
 
 class Player(Sprite):
 
-    __gender: str
-
     def __init__(self, gender):
-        self.__gender = gender
+        self._gender = gender
 
+    @property
     def gender(self) -> str:
-        return self.__gender
+        return self._gender
+    
+    @gender.setter
+    def gender(self, value):
+        self._gender = value
 
     def get_json(self):
-        name = Sprite.sprite_name
-        id = Sprite.id
-        gender = Player.gender()
+        name = self.sprite_name
+        id = self.id
+        gender = self.gender
 
         return jsonify(sprite_name=name,
                        id=id,
