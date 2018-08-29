@@ -7,6 +7,7 @@ from .ships import Ship
 class Clan(Sprite, metaclass=ABCMeta):
     __ships: List[Ship]
     __specialized_attributes: Dict[str, int]
+    name: str
 
     @abstractmethod
     def apply_attributes(self):
@@ -17,7 +18,7 @@ class Clan(Sprite, metaclass=ABCMeta):
         return self.__ships
 
     @ships.setter
-    def ships(self, new_ships: List[ships]):
+    def ships(self, new_ships: List[Ship]):
         self.__ships = new_ships
 
     @property
@@ -30,12 +31,15 @@ class Clan(Sprite, metaclass=ABCMeta):
 
 
 class Kuirk(Clan):
+    name = "kuirk"
     pass
 
 
 class Ranger(Clan):
+    name = "ranger"
     pass
 
 
 class Strolth(Clan):
+    name = "strolth"
     pass

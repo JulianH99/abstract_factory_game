@@ -1,12 +1,12 @@
-from flask import Flask
-from flask_cors import CORS
+from flask import Flask, jsonify
+from flask_cors import CORS, cross_origin
 from flask_socketio import SocketIO
 
 from .models.factories.sprite_factories import ShipFactory
 
-
 app = Flask(__name__)
-CORS(app)
+
+CORS(app=app)
 
 # get socket io working
 socketio = SocketIO(app)
@@ -15,6 +15,11 @@ socketio = SocketIO(app)
 @app.route('/')
 def hello_world():
     return 'hello world'
+
+@app.route('/get_group_of/<gender>')
+@cross_origin()
+def get_group_of(gender: str):
+    print(gender)
 
 
 @socketio.on('message')
