@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+from random import randint, choice
+from string import ascii_letters
 from ..clans import Kuirk, Ranger, Strolth, Clan
 from ..base import Player
 from ..ships import Ship, AgileShip, HeavyShip, SmartShip
@@ -44,7 +46,11 @@ class PlayerFactory(SpriteFactory):
 
     @staticmethod
     def factory_method(gender) -> Player:
-        pass
+        player = Player(gender)
+        
+        player.sprite_name = "".join(choice(ascii_letters) for x in range(6))
+
+        return player
 
 
 class ShipFactory(SpriteFactory):
