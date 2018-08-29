@@ -27,7 +27,6 @@ module.exports = {
                     'file-loader?[path][name].[ext]'
                 ]
             }
-
         ]
     },
     devServer: {

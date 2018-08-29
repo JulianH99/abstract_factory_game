@@ -1,6 +1,5 @@
 
 import Phaser from 'phaser';
-import socket from '../handlers/Socket';
 
 export default class Scene1 extends Phaser.Scene{
 
@@ -36,17 +35,18 @@ export default class Scene1 extends Phaser.Scene{
         this.maleImg.setInteractive();
         this.femaleImg.setInteractive();
 
-        this.input.on('gameobjectdown', this.onObjectDown);
+        this.input.on('gameobjectdown', this.onObjectDown, this);
     }
 
     onObjectDown(pointer, gameObject) {
+        let gender = gameObject.texture.key;
 
+        this.scene.start("ShowChars", {
+            gender: gender
+        });
     }
 
     update() {
-
-
-
     }
 
 }
