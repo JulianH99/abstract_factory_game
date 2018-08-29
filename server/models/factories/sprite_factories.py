@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from ..clans import Kuirk, Ranger, Strolth, Clan
 from ..base import Player
-from ..ships import Ship
+from ..ships import Ship, AgileShip, HeavyShip, SmartShip
 from .abstract_clan_factory import AbstractClanFactory, \
 ConcreteKuirkFactory,\
  ConcreteRangerFactory,\
@@ -54,4 +54,11 @@ class ShipFactory(SpriteFactory):
 
     @staticmethod
     def factory_method(ship_type) -> Ship:
-        pass
+        if ship_type == 'AgileShip':
+            return AgileShip()
+        elif ship_type == 'HeavyShip':
+            return HeavyShip()
+        elif ship_type == 'SmartShip':
+            return SmartShip()
+        else:
+            raise Exception("{} is not a known ship type".format(ship_type))

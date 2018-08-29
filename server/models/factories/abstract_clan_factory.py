@@ -31,8 +31,22 @@ class ConcreteStrolthFactory(AbstractClanFactory):
 
 
 class ConcreteRangerFactory(AbstractClanFactory):
-    pass
+
+    @staticmethod
+    def get_race_sprite():
+        return Ranger()
+
+    @staticmethod
+    def get_ships():
+        return [AgileShip(), HeavyShip(), SmartShip()]
 
 
 class ConcreteKuirkFactory(AbstractClanFactory):
-    pass
+
+    @staticmethod
+    def get_race_sprite():
+        return Kuirk()
+
+    @staticmethod
+    def get_ships():
+        return [AgileShip(), HeavyShip(), SmartShip()]

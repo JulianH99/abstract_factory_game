@@ -46,7 +46,6 @@ class Ship(Sprite, metaclass=ABCMeta):
 
     def get_json(self):
 
-        #__accessories: List[object]
         name = self.sprite_name
         id = self.id
         speed = self.speed
