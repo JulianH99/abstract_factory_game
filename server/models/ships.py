@@ -1,4 +1,7 @@
 from abc import ABCMeta
+
+from flask import jsonify
+
 from .base import Sprite
 from typing import List
 
@@ -40,6 +43,22 @@ class Ship(Sprite, metaclass=ABCMeta):
     @accessories.setter
     def accessories(self, new_accessories: List[object]):
         self.__accessories = new_accessories
+
+    def get_json(self):
+        #__accessories: List[object]
+        name = Sprite.sprite_name
+        id = Sprite.id
+        speed = Ship.speed
+        resistance = Ship.resistance
+        attack = Ship.attack
+        accesories = List[object] = None
+
+        return jsonify(sprite_name=name,
+                       id=id,
+                       speed=speed,
+                       resistance=resistance,
+                       attack=attack,
+                       accesories=accesories)
 
 
 class AgileShip(Ship):
