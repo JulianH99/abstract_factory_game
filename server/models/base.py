@@ -50,7 +50,7 @@ class Player(Sprite):
         name = self.sprite_name
         id = self.id
         gender = self.gender
-
+        
         return jsonify(sprite_name=name,
                        id=id,
                        gender=gender)
