@@ -1,4 +1,7 @@
 from abc import ABC, abstractmethod
+import json
+
+from flask import jsonify
 
 
 class Sprite(ABC):
@@ -33,8 +36,17 @@ class Player(Sprite):
     def __init__(self, gender):
         self.__gender = gender
 
+    def gender(self) -> str:
+        return self.__gender
+
     def get_json(self):
-        pass
+        name = Sprite.sprite_name
+        id = Sprite.id
+        gender = Player.gender()
+
+        return jsonify(sprite_name=name,
+                       id=id,
+                       gender=gender)
 
 
 class User:

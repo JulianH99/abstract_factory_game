@@ -1,4 +1,7 @@
 from abc import ABCMeta, abstractmethod
+
+from flask import jsonify
+
 from .base import Sprite
 from typing import List, Dict
 from .ships import Ship
@@ -29,6 +32,12 @@ class Clan(Sprite, metaclass=ABCMeta):
     def specialized_attributes(self, new_specialized_attributes: Dict[str, int]):
         self.__specialized_attributes = new_specialized_attributes
 
+    def get_json(self):
+        name = Sprite.sprite_name
+        id = Sprite.id
+
+        return jsonify(name=name,
+                       id=id)
 
 class Kuirk(Clan):
     name = "kuirk"
