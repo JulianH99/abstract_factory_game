@@ -1,5 +1,11 @@
 # Abstract Factory Game
 
+## Integranges
+
+* Julián Barrios - 20171020123
+* Fabio Ortíz - 20171020051
+* Juán Camilo Sánchez - 20171020131
+
 ## client
 En la carpet `client` se van a alojar todos los archivos relacionados con el frontend de la aplicación.  
 Para correr el servidor de cliente, se deben instalar las dependencias mediante 
