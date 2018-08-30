@@ -41,9 +41,10 @@ export default class Scene1 extends Phaser.Scene{
     onObjectDown(pointer, gameObject) {
         let gender = gameObject.texture.key;
 
-        this.scene.start("ShowChars", {
-            gender: gender
-        });
+        this.sys.game._GENDER = gender;
+        console.log(this.sys.game._GENDER);
+        this.scene.start("ShowChars");
+
     }
 
     update() {

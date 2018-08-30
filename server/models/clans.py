@@ -39,6 +39,7 @@ class Clan(Sprite, metaclass=ABCMeta):
         return jsonify(name=name,
                        id=id)
 
+
 class Kuirk(Clan):
     name = "kuirk"
     pass

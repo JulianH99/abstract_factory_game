@@ -2,6 +2,7 @@
 import Phaser from 'phaser';
 import Scene1 from './scenes/Scene1';
 import ShowChars from './scenes/ShowChars';
+import ClanSelection from './scenes/ClanSelection';
 //import Socket from './handlers/Socket';
 import '../scss/main.scss';
 
@@ -19,7 +20,7 @@ const config = {
     type: Phaser.AUTO,
     width: window.innerWidth,
     height: window.innerHeight,
-    scene: [Scene1, ShowChars],
+    scene: [ClanSelection, Scene1, ShowChars],
     physics: {
         default: 'ARCADE'
     }

@@ -7,35 +7,28 @@ export default class ShowChars extends Phaser.Scene {
         super({key:"ShowChars"});
     }
 
-    init(data) {
-        console.log(data);
-        this.sys.game._GENDER = data.gender;
-        
-    }
-
-    async preload() {
-        await this.getCharsInfo(this.sys.game._GENDER);
+    preload() {
+        this.getCharsInfo(this.sys.game._GENDER);
 
         let gender = this.sys.game._GENDER;
+        let clan = this.sys.game._CLAN;
         let prefix = '';
-        console.log(gender);
-        if(gender == 'male') 
+
+        if(gender === 'male')
             prefix = 'Men';
         else
             prefix = 'Women';
 
-        console.log(prefix);
-        
-        this.load.image('rander', `./assets/${prefix}Ranger.jpg`);
-        this.load.image('strolth', `./assets/${prefix}Strolth.jpg`);
-        this.load.image('wuick', `./assets/${prefix}Wuick.jpg`);
-        this.load.image('SecondModeloBase', './assets/SecondModelBase.jpg');
+        this.load.image('char_ranger', `./assets/${prefix}Ranger.jpg`);
+        this.load.image('char_strolth', `./assets/${prefix}Strolth.jpg`);
+        this.load.image('char_kuirk', `./assets/${prefix}Wuick.jpg`);
+        this.load.image('SecondModelBase', './assets/SecondModelBase.jpg');
 
     }
 
     create() {
-        this.add.image(200,200, 'ranger');
-        this.add.image(300, 100, 'SecondModelBase')
+        this.add.image(200,200, `char_${this.sys.game._CLAN}`);
+        this.add.image(300, 100, 'SecondModelBase');
     }
 
     async getCharsInfo(gender) {

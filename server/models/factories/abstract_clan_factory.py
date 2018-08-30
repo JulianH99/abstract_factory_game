@@ -10,7 +10,7 @@ class AbstractClanFactory(ABC):
 
     @staticmethod
     @abstractmethod
-    def get_race_sprite():
+    def get_race_sprite(gender: str):
         pass
 
     @staticmethod
@@ -22,7 +22,7 @@ class AbstractClanFactory(ABC):
 class ConcreteStrolthFactory(AbstractClanFactory):
 
     @staticmethod
-    def get_race_sprite():
+    def get_race_sprite(gender: str):
         return Strolth()
 
     @staticmethod

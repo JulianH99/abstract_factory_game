@@ -38,7 +38,6 @@ class FactoryClanAbsFact(SpriteFactory):
             raise Exception("{} is not a known clan type".format(clan))
 
 
-
 class PlayerFactory(SpriteFactory):
     """
         class PlayerFactory
