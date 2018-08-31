@@ -58,12 +58,12 @@ class ShipFactory(SpriteFactory):
     """
 
     @staticmethod
-    def factory_method(ship_type) -> Ship:
+    def factory_method(ship_type, speed, resistance, attack) -> Ship:
         if ship_type == 'AgileShip':
-            return AgileShip()
+            return AgileShip(speed, resistance, attack)
         elif ship_type == 'HeavyShip':
-            return HeavyShip()
+            return HeavyShip(speed, resistance, attack)
         elif ship_type == 'SmartShip':
-            return SmartShip()
+            return SmartShip(speed, resistance, attack)
         else:
             raise Exception("{} is not a known ship type".format(ship_type))

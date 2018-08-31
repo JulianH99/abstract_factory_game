@@ -12,6 +12,11 @@ class Ship(Sprite, metaclass=ABCMeta):
     _attack: int
     _accessories: List[object]
 
+    def __init__(self, speed, resistance, attack):
+        self._speed= speed
+        self._resistance = resistance
+        self._attack = attack
+
     @property
     def speed(self) -> int:
         return self._speed
