@@ -59,12 +59,9 @@ class Ship(Sprite, metaclass=ABCMeta):
         attack = self.attack
         accesories = None
 
-        return jsonify(sprite_name=name,
-                       id=id,
-                       speed=speed,
-                       resistance=resistance,
-                       attack=attack,
-                       accesories=accesories)
+        return jsonify({"name": name, "id": id, "speed": speed,
+                        "resistance": resistance, "attack": attack,
+                        "accesories": accesories})
 
 
 class AgileShip(Ship):

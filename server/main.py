@@ -27,7 +27,11 @@ def get_group_of(gender: str, clan: str):
 
     ship1, ship2, ship3 = clan_factory.get_ships()
 
-    return jsonify(clan=clan.get_json())
+    return jsonify(clan=clan.get_json(),
+                   player=player.get_json(),
+                   ship1=ship1.get_json(),
+                   ship2=ship2.get_json(),
+                   ship3=ship3.get_json())
 
 
 @socketio.on('message')

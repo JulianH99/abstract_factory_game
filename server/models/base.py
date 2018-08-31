@@ -51,9 +51,7 @@ class Player(Sprite):
         id = self.id
         gender = self.gender
         
-        return jsonify(sprite_name=name,
-                       id=id,
-                       gender=gender)
+        return {"name": name, "id": id, "gender": gender}
 
 
 class User:
