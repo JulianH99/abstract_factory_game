@@ -8,48 +8,118 @@ from .ships import Ship
 
 
 class Clan(Sprite, metaclass=ABCMeta):
-    __ships: List[Ship]
-    __specialized_attributes: Dict[str, int]
+    _ships: List[Ship]
+    _specialized_attributes: Dict[str, Dict[str, int]]
     name: str
 
-    @abstractmethod
-    def apply_attributes(self):
-        pass
+    def __init__(self, specialized_attributes: Dict[str, Dict[str, int]]):
+        self._specialized_attributes = specialized_attributes
 
     @property
     def ships(self) -> List[Ship]:
-        return self.__ships
+        return self._ships
 
     @ships.setter
     def ships(self, new_ships: List[Ship]):
-        self.__ships = new_ships
+        self._ships = new_ships
 
     @property
-    def specialized_attributes(self) -> Dict[str, int]:
-        return self.__specialized_attributes
+    def specialized_attributes(self) -> Dict[str, Dict[str, int]]:
+        return self._specialized_attributes
 
     @specialized_attributes.setter
-    def specialized_attributes(self, new_specialized_attributes: Dict[str, int]):
-        self.__specialized_attributes = new_specialized_attributes
+    def specialized_attributes(self, new_specialized_attributes: Dict[str, Dict[str, int]]):
+        self._specialized_attributes = new_specialized_attributes
 
     def get_json(self):
-        name = self.sprite_name
+        name = self.name
         id = self.id
 
-        return jsonify(name=name,
-                       id=id)
+        return {"name": name, "id": id}
 
 
 class Kuirk(Clan):
+    """
+    Specialized in driving the AgileShip
+    """
+
     name = "kuirk"
-    pass
+    
+    def __init__(self):
+        specialized_attributes = {
+            "heavy": {
+                "speed": 50,
+                "resistance": 70,
+                "attack": 65
+            },
+            "agile": {
+                "speed": 80,
+                "resistance": 60,
+                "attack": 80
+            },
+            "smart": {
+                "speed": 70,
+                "resistance": 60,
+                "attack": 70
+            },
+        }
+
+        self.specialized_attributes = specialized_attributes
 
 
 class Ranger(Clan):
+    """
+    Specialized in driving the SmartShip
+    """
     name = "ranger"
-    pass
+
+    def __init__(self):
+        specialized_attributes = {
+            "heavy": {
+                "speed": 50,
+                "resistance": 70,
+                "attack": 70
+            },
+            "agile": {
+                "speed": 70,
+                "resistance": 50,
+                "attack": 70
+            },
+            "smart": {
+                "speed": 80,
+                "resistance": 70,
+                "attack": 90
+            },
+        }
+
+        self.specialized_attributes = specialized_attributes
 
 
 class Strolth(Clan):
+    """
+    Specialized in driving the HeavyShip
+    """
+    
     name = "strolth"
-    pass
+
+    def __init__(self):
+        specialized_attributes = {
+            "heavy": {
+                "speed": 60,
+                "resistance": 80,
+                "attack": 75
+            },
+            "agile": {
+                "speed": 60,
+                "resistance": 50,
+                "attack": 65
+            },
+            "smart": {
+                "speed": 60,
+                "resistance": 60,
+                "attack": 70
+            },
+        }
+
+        self.specialized_attributes = specialized_attributes
+

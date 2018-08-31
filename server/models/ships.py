@@ -11,6 +11,7 @@ class Ship(Sprite, metaclass=ABCMeta):
     _resistance: int
     _attack: int
     _accessories: List[object]
+    name = ''
 
     def __init__(self, speed, resistance, attack):
         self._speed= speed
@@ -67,12 +68,15 @@ class Ship(Sprite, metaclass=ABCMeta):
 
 
 class AgileShip(Ship):
+    name = 'agile'
     pass
 
 
 class HeavyShip(Ship):
+    name = 'heavy'
     pass
 
 
 class SmartShip(Ship):
+    name = 'smart'
     pass

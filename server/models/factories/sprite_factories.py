@@ -1,13 +1,8 @@
 from abc import ABC, abstractmethod
-from random import randint, choice
+from random import choice
 from string import ascii_letters
-from ..clans import Kuirk, Ranger, Strolth, Clan
 from ..base import Player
 from ..ships import Ship, AgileShip, HeavyShip, SmartShip
-from .abstract_clan_factory import AbstractClanFactory, \
-ConcreteKuirkFactory,\
- ConcreteRangerFactory,\
-  ConcreteStrolthFactory
 
 
 class SpriteFactory(ABC):
@@ -21,23 +16,6 @@ class SpriteFactory(ABC):
         pass
 
 
-class FactoryClanAbsFact(SpriteFactory):
-    """
-        class FactoryClanAbsFact
-    """
-
-    @staticmethod
-    def factory_method(clan) -> AbstractClanFactory:
-        if clan == Kuirk.name:
-            return ConcreteKuirkFactory()
-        elif clan == Strolth.name:
-            return ConcreteStrolthFactory()
-        elif clan == Ranger.name:
-            return ConcreteRangerFactory()
-        else:
-            raise Exception("{} is not a known clan type".format(clan))
-
-
 class PlayerFactory(SpriteFactory):
     """
         class PlayerFactory
@@ -46,7 +24,7 @@ class PlayerFactory(SpriteFactory):
     @staticmethod
     def factory_method(gender) -> Player:
         player = Player(gender)
-        
+
         player.sprite_name = "".join(choice(ascii_letters) for x in range(6))
 
         return player
@@ -59,11 +37,11 @@ class ShipFactory(SpriteFactory):
 
     @staticmethod
     def factory_method(ship_type, speed, resistance, attack) -> Ship:
-        if ship_type == 'AgileShip':
+        if ship_type == AgileShip.name:
             return AgileShip(speed, resistance, attack)
-        elif ship_type == 'HeavyShip':
+        elif ship_type == HeavyShip.name:
             return HeavyShip(speed, resistance, attack)
-        elif ship_type == 'SmartShip':
+        elif ship_type == SmartShip.name:
             return SmartShip(speed, resistance, attack)
         else:
             raise Exception("{} is not a known ship type".format(ship_type))
