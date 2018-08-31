@@ -10,7 +10,6 @@ export default class Scene1 extends Phaser.Scene{
     preload() {
         this.load.image('male', './assets/male.png');
         this.load.image('female', './assets/female.png');
-        this.load.image('mario', './assets/mario.png');
     }
 
     create() {

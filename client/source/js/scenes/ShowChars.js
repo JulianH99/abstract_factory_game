@@ -19,20 +19,20 @@ export default class ShowChars extends Phaser.Scene {
         else
             prefix = 'Women';
 
-        this.load.image('char_ranger', `./assets/${prefix}Ranger.jpg`);
-        this.load.image('char_strolth', `./assets/${prefix}Strolth.jpg`);
-        this.load.image('char_kuirk', `./assets/${prefix}Wuick.jpg`);
-        this.load.image('SecondModelBase', './assets/SecondModelBase.jpg');
+        this.load.image('char_ranger', `./assets/${prefix}Ranger.png`);
+        this.load.image('char_strolth', `./assets/${prefix}Strolth.png`);
+        this.load.image('char_kuirk', `./assets/${prefix}Wuick.png`);
+        this.load.image('SecondModelBase', './assets/SecondModelBase.png');
 
     }
 
-    create() {
-        this.add.image(200,200, `char_${this.sys.game._CLAN}`);
+    async create() {
+        this.add.image(200, 200, `char_${this.sys.game._CLAN}`);
         this.add.image(300, 100, 'SecondModelBase');
     }
 
-    async getCharsInfo(gender) {
-        await fetch(`${config.serverUrl}/get_group_of/${gender}`)
+    async getCharsInfo(gender, clan) {
+        await fetch(`${config.serverUrl}/get_group_of/${gender}/${clan}`)
             .then(res => res.json())
             .then(res => {
                 console.log(res);

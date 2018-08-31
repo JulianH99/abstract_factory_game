@@ -7,9 +7,9 @@ export default class ClanSelection extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('kuirk', './assets/SymbolWuick.jpg');
-        this.load.image('ranger', './assets/SymbolRanger.jpg');
-        this.load.image('strolth', './assets/SymbolStrolth.jpg');
+        this.load.image('kuirk', './assets/SymbolWuick.png');
+        this.load.image('ranger', './assets/SymbolRanger.png');
+        this.load.image('strolth', './assets/SymbolStrolth.png');
     }
 
     create(){
