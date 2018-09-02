@@ -52,16 +52,16 @@ class Ship(Sprite, metaclass=ABCMeta):
 
     def get_json(self):
 
-        name = self.sprite_name
+        name = self.name
         id = self.id
         speed = self.speed
         resistance = self.resistance
         attack = self.attack
         accesories = None
 
-        return jsonify({"name": name, "id": id, "speed": speed,
+        return {"name": name, "id": id, "speed": speed,
                         "resistance": resistance, "attack": attack,
-                        "accesories": accesories})
+                        "accesories": accesories}
 
 
 class AgileShip(Ship):

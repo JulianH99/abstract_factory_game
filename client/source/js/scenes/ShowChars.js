@@ -8,11 +8,11 @@ export default class ShowChars extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('char_female_ranger', './assets/WomenRanger.png')
+        this.load.image('char_women_ranger', './assets/WomenRanger.png')
         this.load.image('char_men_ranger', './assets/MenRanger.png')
-        this.load.image('char_female_strolth', './assets/WomanStrolth.png');
+        this.load.image('char_women_strolth', './assets/WomenStrolth.png');
         this.load.image('char_men_strolth', './assets/MenStrolth.png');
-        this.load.image('char_female_kuirk', './assets/FemaleWuick.png');
+        this.load.image('char_women_kuirk', './assets/WomenWuick.png');
         this.load.image('char_men_kuirk', './assets/MenWuick.png');
 
         this.load.image('symbol_ranger', './assets/SymbolRanger.png');
@@ -20,35 +20,64 @@ export default class ShowChars extends Phaser.Scene {
         this.load.image('symbol_kuirk', './assets/SymbolWuick.png');
 
         this.load.image('pirate', './assets/Pirat.png');
+        
         // naves
-
+        this.load.image('agile', './assets/FirstModelQuick.png');
+        this.load.image('heavy', './assets/FirstModelMiddle.png');
+        this.load.image('smart', './assets/SecondModelBase.png');
 
     }
 
     async create() {
-        let res = await this.getCharsInfo(this.sys.game._GENDER, this.sys.game._CLAN);
+        let gender = this.sys.game._GENDER;
+        let clan = this.sys.game._CLAN;
+        let res = await fetch(`${config.serverUrl}/get_group_of/${gender}/${clan}`);
+        res = await res.json();
 
+        console.log(res);
         if(res) {
             let clan = res.clan.name
             let playername = res.player.name;
-            let ship1 = res.ship1.name;
-            let ship2 = res.ship2.name;
-            let ship3 = res.ship3.name;
+            let ship1 = res.ship1;
+            let ship2 = res.ship2;
+            let ship3 = res.ship3;
 
-            this.add.image(100, 100, `char_${gender}_${clan}`);
-            this.add.text(100, 300, playername);
+            this.renderShips(ship1, ship2, ship3);
+
+            console.log(`char_${this.getGender(gender)}_${clan}`);
+            this.add.image(100, 100, `char_${this.getGender(gender)}_${clan}`);
+            this.add.text(50, 150, playername);
             this.add.image(400, 100, `symbol_${clan}`);
         }
 
-        for(int i = 0; i < 4; i++) {
-            this.load.image(100, (i+1)*100, 'pirate')
+        for(var i = 0; i < 4; i++) {
+            this.load.image(500, (i+1)*100, 'pirate')
         }
     }
 
     async getCharsInfo(gender, clan) {
         await fetch(`${config.serverUrl}/get_group_of/${gender}/${clan}`)
-            .then(res => res.json())
-            .then(res => res);
+            .then(res => res.json());
+    }
+    
+
+    /**
+     * 
+     * @param {string} gender 
+     * @returns {string}
+     */
+    getGender(gender) {
+        return gender.toLowerCase() === 'male'? 'men':'women';
+    }
+
+    /**
+     * 
+     * @param  {...Object} ships 
+     */
+    renderShips(...ships) {
+        ships.forEach((ship, index) => {
+            this.add.image((index + 1)*100, 300, ship.name)
+        })
     }
  
 }
