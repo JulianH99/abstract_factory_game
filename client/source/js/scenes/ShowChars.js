@@ -51,7 +51,7 @@ export default class ShowChars extends Phaser.Scene {
         }
 
         for(var i = 0; i < 4; i++) {
-            this.load.image(500, (i+1)*100, 'pirate')
+            this.add.image(600, (i+1)*100, 'pirate')
         }
     }
 
@@ -76,7 +76,18 @@ export default class ShowChars extends Phaser.Scene {
      */
     renderShips(...ships) {
         ships.forEach((ship, index) => {
-            this.add.image((index + 1)*100, 300, ship.name)
+            let xPosition = (index + 1)*100 + 50*index
+            this.add.image(xPosition, 300, ship.name);
+
+            let keys = Object.keys(ship);
+
+            let keyIndex = 0;
+            keys.forEach((key) => {
+                if(key !== 'name' && key !== 'id' && key !== 'accesories') {
+                    this.add.text(xPosition - 50, 350 + (keyIndex*20) , `${key.toUpperCase()}:${ship[key]}`);
+                    keyIndex += 1;
+                }
+            })
         })
     }
  
