@@ -1,7 +1,4 @@
 from abc import ABC, abstractmethod
-import json
-
-from flask import jsonify
 
 
 class Sprite(ABC):
@@ -52,6 +49,25 @@ class Player(Sprite):
         gender = self.gender
         
         return {"name": name, "id": id, "gender": gender}
+
+
+class Pirate(Sprite):
+
+    def __init__(self):
+        self._ship = None
+
+    @property
+    def ship(self):
+        return self._ship
+
+    @ship.setter
+    def ship(self, ship):
+        self._ship = ship
+
+    def get_json(self):
+        return {
+            'ship': self._ship.get_json()
+        }
 
 
 class User:

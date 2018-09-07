@@ -1,7 +1,5 @@
 from abc import ABCMeta
-
 from flask import jsonify
-
 from .base import Sprite
 from typing import List
 

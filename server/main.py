@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 from flask_cors import CORS, cross_origin
 from flask_socketio import SocketIO
 from .models.factories.abstract_clan_factory import FactoryClanAbsFact
+from .models.prototypes import PiratePrototype
 
 app = Flask(__name__)
 
@@ -32,6 +33,15 @@ def get_group_of(gender: str, clan: str):
                    ship1=ship1.get_json(),
                    ship2=ship2.get_json(),
                    ship3=ship3.get_json())
+
+
+@app.route('/get_pirates/<number>')
+@cross_origin()
+def get_pirates(number):
+    number = int(number)
+    pirates = [PiratePrototype.clone() for x in range(number)]
+
+    return jsonify([p.get_json() for p in pirates])
 
 
 @socketio.on('message')
