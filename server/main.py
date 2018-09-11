@@ -3,6 +3,8 @@ from flask_cors import CORS, cross_origin
 from flask_socketio import SocketIO
 from .models.factories.abstract_clan_factory import FactoryClanAbsFact
 from .models.prototypes import PiratePrototype
+from .models.builders.directors import PlayerGroup
+from .models.builders.base_builders import PlayerBuilder
 
 app = Flask(__name__)
 
@@ -39,9 +41,21 @@ def get_group_of(gender: str, clan: str):
 @cross_origin()
 def get_pirates(number):
     number = int(number)
-    pirates = [PiratePrototype.clone() for x in range(number)]
+    pirates = [PiratePrototype.clone() for _ in range(number)]
 
     return jsonify([p.get_json() for p in pirates])
+
+
+@app.route('/get_player_builder/<gender>/<clan>')
+@cross_origin()
+def get_player_builder(gender, clan):
+    player_group = PlayerGroup(PlayerBuilder())
+
+    player = player_group.build_player(gender, clan)
+    return jsonify(
+        player[0].get_json(),
+        player[1].get_json()
+    )
 
 
 @socketio.on('message')

@@ -33,6 +33,7 @@ class Sprite(ABC):
 class Player(Sprite):
 
     def __init__(self, gender):
+        super(Sprite, self).__init__()
         self._gender = gender
 
     @property
@@ -54,6 +55,7 @@ class Player(Sprite):
 class Pirate(Sprite):
 
     def __init__(self):
+        super(Sprite, self).__init__()
         self._ship = None
 
     @property
