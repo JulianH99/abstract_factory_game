@@ -50,14 +50,21 @@ export default class ShowChars extends Phaser.Scene {
             this.add.image(400, 100, `symbol_${clan}`);
         }
 
-        for(var i = 0; i < 4; i++) {
-            this.add.image(600, (i+1)*100, 'pirate')
-        }
+        await this.getPirates();
     }
 
     async getCharsInfo(gender, clan) {
         await fetch(`${config.serverUrl}/get_group_of/${gender}/${clan}`)
             .then(res => res.json());
+    }
+
+    async getPirates() {
+        let res = await fetch(`${config.serverUrl}/get_pirates/10`);
+        res = await res.json();
+
+        res.forEach((pirate, index) => {
+            this.add.image(600, (index + 1)*100, 'pirate');
+        })
     }
     
 
