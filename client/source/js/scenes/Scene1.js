@@ -22,10 +22,11 @@ export default class Scene1 extends Phaser.Scene{
         console.log(height);
         console.log(width);
 
-        let fondo = this.add.image(0, 0 , 'fondo');
-        fondo.scale.setTo(width, height);
+        let fondo = this.add.tileSprite(650, 550, 600, 600 ,'fondo');
+        fondo.scaleY = 2.5;
+        fondo.scaleX = 2.5;
 
-        this.chooseGenderText = this.add.text(centerX - 100, 50, 'Escoge tu genero', {
+        this.chooseGenderText = this.add.text(centerX - 120, 50, 'Choose your gender', {
             fontFamily: 'Arial',
             fontSize: '30px'
         });

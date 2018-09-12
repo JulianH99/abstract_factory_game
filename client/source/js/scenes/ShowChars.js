@@ -26,6 +26,9 @@ export default class ShowChars extends Phaser.Scene {
         this.load.image('heavy', './assets/FirstModelMiddle.png');
         this.load.image('smart', './assets/SecondModelBase.png');
 
+        // fondo
+        this.load.image('fondo', './assets/fondo.png')
+
     }
 
     async create() {
@@ -33,6 +36,10 @@ export default class ShowChars extends Phaser.Scene {
         let clan = this.sys.game._CLAN;
         let res = await fetch(`${config.serverUrl}/get_group_of/${gender}/${clan}`);
         res = await res.json();
+
+        let fondo = this.add.tileSprite(880, 550, 600, 600 ,'fondo');
+        fondo.scaleY = 2.5;
+        fondo.scaleX = 2.5;
 
         console.log(res);
         if(res) {
@@ -57,13 +64,13 @@ export default class ShowChars extends Phaser.Scene {
         await fetch(`${config.serverUrl}/get_group_of/${gender}/${clan}`)
             .then(res => res.json());
     }
-
     async getPirates() {
-        let res = await fetch(`${config.serverUrl}/get_pirates/10`);
+        let res = await fetch(`${config.serverUrl}/get_pirates/6`);
         res = await res.json();
-
+        console.log(res);
         res.forEach((pirate, index) => {
             this.add.image(600, (index + 1)*100, 'pirate');
+            this.add.image(700, (index + 1)*100, pirate.ship.name);
         })
     }
     

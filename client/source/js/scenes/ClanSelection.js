@@ -10,6 +10,7 @@ export default class ClanSelection extends Phaser.Scene {
         this.load.image('kuirk', './assets/SymbolWuick.png');
         this.load.image('ranger', './assets/SymbolRanger.png');
         this.load.image('strolth', './assets/SymbolStrolth.png');
+        this.load.image('fondo', './assets/fondo.png')
     }
 
     create(){
@@ -19,11 +20,16 @@ export default class ClanSelection extends Phaser.Scene {
         let textConfig = {
             fontFamily: 'Arial',
             align: 'center',
-            fill: 'orange'
+            fontSize: 24,
+            fill: 'white'
         }
 
+        let fondo = this.add.tileSprite(880, 550, 600, 600 ,'fondo');
+        fondo.scaleY = 2.5;
+        fondo.scaleX = 2.5;
+
         this.text = this.add.text(100, 100, 'Choose your clan', textConfig);
-        this.text.x = window.innerWidth / 2 - this.text.width;
+        this.text.x = window.innerWidth / 2 - this.text.width + 50;
 
         let clans = ['kuirk', 'ranger', 'strolth'];
 
