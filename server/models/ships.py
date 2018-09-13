@@ -49,7 +49,7 @@ class Ship(Sprite, metaclass=ABCMeta):
         self._accessories = new_accessories
 
     def get_json(self):
-        json_dict = super(Ship).get_json()
+        json_dict = super().get_json()
         json_dict['speed'] = self.speed
         json_dict['resistance'] = self.resistance
         json_dict['attack'] = self.attack

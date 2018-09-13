@@ -48,7 +48,7 @@ class Player(Sprite):
         self._gender = value
 
     def get_json(self):
-        json_dict = super(Sprite).get_json()
+        json_dict = super().get_json()
 
         json_dict['gender'] = self.gender
 
@@ -70,7 +70,7 @@ class Pirate(Sprite):
         self._ship = ship
 
     def get_json(self):
-        json_dict = super(Sprite).get_json()
+        json_dict = super().get_json()
         json_dict['ship'] = self._ship.get_json
         return json_dict
 
