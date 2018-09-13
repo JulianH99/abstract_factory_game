@@ -5,6 +5,7 @@ from .models.factories.abstract_clan_factory import FactoryClanAbsFact
 from .models.prototypes import PiratePrototype
 from .models.builders.directors import PlayerGroup
 from .models.builders.base_builders import PlayerBuilder
+from .models.clans import Kuirk, Strolth, Ranger
 
 app = Flask(__name__)
 
@@ -17,6 +18,16 @@ socketio = SocketIO(app)
 @app.route('/')
 def hello_world():
     return 'hello world'
+
+
+@app.route('/clans')
+@cross_origin()
+def clans():
+    strolth = FactoryClanAbsFact.factory_method(Strolth.name).get_clan_sprite().get_json()
+    kuirk = FactoryClanAbsFact.factory_method(Kuirk.name).get_clan_sprite().get_json()
+    ranger = FactoryClanAbsFact.factory_method(Ranger.name).get_clan_sprite().get_json()
+
+    return jsonify([strolth, kuirk, ranger])
 
 
 @app.route('/get_group_of/<gender>/<clan>')

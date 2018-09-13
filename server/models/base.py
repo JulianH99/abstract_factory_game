@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from typing import Dict
 
 
 class Sprite(ABC):
@@ -13,7 +14,7 @@ class Sprite(ABC):
         self._id = 0
         self._sprite_name = ''
 
-    def get_json(self):
+    def get_json(self) -> Dict:
         return {
             "id": self._id,
             "sprite": self._sprite_name
@@ -38,6 +39,20 @@ class Player(Sprite):
     def __init__(self, gender):
         super(Sprite, self).__init__()
         self._gender = gender
+        self._sprite_name = Player.__get_body_from_gender(gender)
+        self._complete_sprite_name = ''
+
+    @staticmethod
+    def __get_body_from_gender(gender: str) -> str:
+        """
+        Returns the sprite name for the gender given
+        :param gender: the gender to be rendered
+        :return: the name of the sprite
+        """
+        if gender == 'male':
+            return "ManModel"
+        else:
+            return "WomanModel"
 
     @property
     def gender(self) -> str:
@@ -47,7 +62,15 @@ class Player(Sprite):
     def gender(self, value):
         self._gender = value
 
-    def get_json(self):
+    @property
+    def complete_sprite(self) -> str:
+        return self._complete_sprite_name
+
+    @complete_sprite.setter
+    def complete_sprite(self, new_value: str):
+        self._complete_sprite_name = new_value
+
+    def get_json(self) -> Dict:
         json_dict = super(Sprite).get_json()
 
         json_dict['gender'] = self.gender
@@ -69,10 +92,11 @@ class Pirate(Sprite):
     def ship(self, ship):
         self._ship = ship
 
-    def get_json(self):
-        json_dict = super(Sprite).get_json()
-        json_dict['ship'] = self._ship.get_json
+    def get_json(self) -> Dict:
+        json_dict = super().get_json()
+        json_dict['ship'] = self._ship.get_json()
         return json_dict
+
 
 class User:
     __name: str

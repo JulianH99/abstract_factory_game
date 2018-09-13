@@ -8,23 +8,28 @@ export default class ShowChars extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('char_women_ranger', './assets/WomenRanger.png')
-        this.load.image('char_men_ranger', './assets/MenRanger.png')
-        this.load.image('char_women_strolth', './assets/WomenStrolth.png');
-        this.load.image('char_men_strolth', './assets/MenStrolth.png');
-        this.load.image('char_women_kuirk', './assets/WomenWuick.png');
-        this.load.image('char_men_kuirk', './assets/MenWuick.png');
+        // rangers
+        this.load.image('WomenRanger', './assets/WomenRanger.png');
+        this.load.image('MenRanger', './assets/MenRanger.png');
 
-        this.load.image('symbol_ranger', './assets/SymbolRanger.png');
-        this.load.image('symbol_strolth', './assets/SymbolStrolth.png');
-        this.load.image('symbol_kuirk', './assets/SymbolWuick.png');
+        // strolth
+        this.load.image('WomanStrolth', './assets/WomenStrolth.png');
+        this.load.image('MenStrolth', './assets/MenStrolth.png');
 
-        this.load.image('pirate', './assets/Pirat.png');
+        // kuirk
+        this.load.image('WomenKuirk', './assets/WomenKuirk.png');
+        this.load.image('MenKuirk', './assets/MenKuirk.png');
+
+        this.load.image('SymbolRanger', './assets/SymbolRanger.png');
+        this.load.image('SymbolStrolth', './assets/SymbolStrolth.png');
+        this.load.image('SymbolWuick', './assets/SymbolWuick.png');
+
+        this.load.image('Pirate', './assets/Pirate.png');
         
         // naves
-        this.load.image('agile', './assets/FirstModelQuick.png');
-        this.load.image('heavy', './assets/FirstModelMiddle.png');
-        this.load.image('smart', './assets/SecondModelBase.png');
+        this.load.image('Agile', './assets/FirstModelQuick.png');
+        this.load.image('Heavy', './assets/FirstModelMiddle.png');
+        this.load.image('Smart', './assets/SecondModelBase.png');
 
         // fondo
         this.load.image('fondo', './assets/fondo.png')

@@ -55,7 +55,4 @@ export default class Scene1 extends Phaser.Scene{
 
     }
 
-    update() {
-    }
-
 }
