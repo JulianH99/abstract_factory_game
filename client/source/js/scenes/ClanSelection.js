@@ -41,7 +41,7 @@ export default class ClanSelection extends Phaser.Scene {
     onGameObjectDown(pointer, object) {
         let clan = object.texture.key;
 
-        this.sys.game._CLAN = clan;
+        this.sys.game._CLAN = this.sys.game._CLANS[clan];
 
         this.scene.start("Scene1");
     }
@@ -53,10 +53,13 @@ export default class ClanSelection extends Phaser.Scene {
      * @returns {Promise<Response | never>}
      */
     async getClans() {
+        this.sys.game._CLANS= [];
         return fetch(`${config.serverUrl}/clans`)
             .then(res => res.json())
             .then(res => {
                 res.map((clan, index) => {
+
+                    this.sys.game._CLANS[clan.sprite] = clan.name;
                     let img = this.add.image(window.innerWidth/2 + index*150, 300, clan.sprite);
                     img.x = img.x - 2.1*img.width;
                     img.setInteractive();

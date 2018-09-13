@@ -25,7 +25,7 @@ class PlayerFactory(SpriteFactory):
     def factory_method(gender) -> Player:
         player = Player(gender)
 
-        player.sprite_name = "".join(choice(ascii_letters) for x in range(6))
+        player.name = "".join(choice(ascii_letters) for x in range(6))
 
         return player
 

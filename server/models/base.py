@@ -38,12 +38,13 @@ class Player(Sprite):
 
     def __init__(self, gender):
         super(Sprite, self).__init__()
+        self._name = ""
         self._gender = gender
-        self._sprite_name = Player.__get_body_from_gender(gender)
+        self._sprite_name = Player.get_body_from_gender(gender)
         self._complete_sprite_name = ''
 
     @staticmethod
-    def __get_body_from_gender(gender: str) -> str:
+    def get_body_from_gender(gender: str) -> str:
         """
         Returns the sprite name for the gender given
         :param gender: the gender to be rendered
@@ -55,13 +56,20 @@ class Player(Sprite):
             return "WomanModel"
 
     @property
+    def name(self) -> str:
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        self._name = value
+
+    @property
     def gender(self) -> str:
         return self._gender
     
     @gender.setter
     def gender(self, value):
         self._gender = value
-
 
     @property
     def complete_sprite(self) -> str:
@@ -75,6 +83,8 @@ class Player(Sprite):
         json_dict = super().get_json()
 
         json_dict['gender'] = self.gender
+        json_dict['base_sprite'] = self.complete_sprite
+        json_dict['name'] = self.name
 
         return json_dict
 
@@ -84,6 +94,7 @@ class Pirate(Sprite):
     def __init__(self):
         super(Sprite, self).__init__()
         self._ship = None
+        self._sprite_name = "Pirate"
 
     @property
     def ship(self):

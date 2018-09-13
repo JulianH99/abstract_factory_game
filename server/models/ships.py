@@ -12,7 +12,8 @@ class Ship(Sprite, metaclass=ABCMeta):
     name = ''
 
     def __init__(self, speed, resistance, attack):
-        self._speed= speed
+        super(Sprite, self).__init__()
+        self._speed = speed
         self._resistance = resistance
         self._attack = attack
 
@@ -60,14 +61,19 @@ class Ship(Sprite, metaclass=ABCMeta):
 
 class AgileShip(Ship):
     name = 'agile'
+    _sprite_name = "Agile"
     pass
 
 
 class HeavyShip(Ship):
     name = 'heavy'
+    _sprite_name = "Heavy"
     pass
 
 
 class SmartShip(Ship):
     name = 'smart'
+    _sprite_name = "Smart"
     pass
+
+

@@ -62,10 +62,10 @@ def get_pirates(number):
 def get_player_builder(gender, clan):
     player_group = PlayerGroup(PlayerBuilder())
 
-    player = player_group.build_player(gender, clan)
+    (player, clan) = player_group.build_player(gender, clan)
     return jsonify(
-        player[0].get_json(),
-        player[1].get_json()
+        player.get_json(),
+        clan.get_json()
     )
 
 

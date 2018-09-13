@@ -11,7 +11,15 @@ class AbstractClanFactory(ABC):
 
     @classmethod
     def get_player_sprite(cls, gender: str):
-        return PlayerFactory.factory_method(gender)
+        player = PlayerFactory.factory_method(gender)
+
+        if gender == 'male':
+            gender_long = "Man"
+        else:
+            gender_long = "Woman"
+
+        player.complete_sprite = "{}{}".format(gender_long, cls.get_clan_sprite().name.capitalize())
+        return player
 
     @classmethod
     @abstractmethod
