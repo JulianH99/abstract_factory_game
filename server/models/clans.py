@@ -1,7 +1,4 @@
-from abc import ABCMeta, abstractmethod
-
-from flask import jsonify
-
+from abc import ABCMeta
 from .base import Sprite
 from typing import List, Dict
 from .ships import Ship
@@ -13,6 +10,7 @@ class Clan(Sprite, metaclass=ABCMeta):
     name: str
 
     def __init__(self, specialized_attributes: Dict[str, Dict[str, int]]):
+        super(Sprite, self).__init__()
         self._specialized_attributes = specialized_attributes
 
     @property
@@ -35,7 +33,11 @@ class Clan(Sprite, metaclass=ABCMeta):
         name = self.name
         id = self.id
 
-        return {"name": name, "id": id}
+        return {
+            "name": name,
+            "id": id,
+            "sprite": self._sprite_name
+        }
 
 
 class Kuirk(Clan):
@@ -46,6 +48,11 @@ class Kuirk(Clan):
     name = "kuirk"
     
     def __init__(self):
+        super(Clan, self).__init__()
+        # set sprite name
+        self._sprite_name = "SymbolKuirk"
+
+        # set clan specialized attributes for ship
         specialized_attributes = {
             "heavy": {
                 "speed": 50,
@@ -64,7 +71,7 @@ class Kuirk(Clan):
             },
         }
 
-        self.specialized_attributes = specialized_attributes
+        self._specialized_attributes = specialized_attributes
 
 
 class Ranger(Clan):
@@ -74,6 +81,10 @@ class Ranger(Clan):
     name = "ranger"
 
     def __init__(self):
+        super(Clan, self).__init__()
+
+        self._sprite_name = "SymbolRanger"
+
         specialized_attributes = {
             "heavy": {
                 "speed": 50,
@@ -92,7 +103,7 @@ class Ranger(Clan):
             },
         }
 
-        self.specialized_attributes = specialized_attributes
+        self._specialized_attributes = specialized_attributes
 
 
 class Strolth(Clan):
@@ -103,6 +114,10 @@ class Strolth(Clan):
     name = "strolth"
 
     def __init__(self):
+        super(Clan, self).__init__()
+
+        self._sprite_name = "SymbolStrolth"
+
         specialized_attributes = {
             "heavy": {
                 "speed": 60,
@@ -121,5 +136,5 @@ class Strolth(Clan):
             },
         }
 
-        self.specialized_attributes = specialized_attributes
+        self._specialized_attributes = specialized_attributes
 

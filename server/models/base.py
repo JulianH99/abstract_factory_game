@@ -13,8 +13,11 @@ class Sprite(ABC):
         self._id = 0
         self._sprite_name = ''
 
-    @abstractmethod
-    def get_json(self): pass
+    def get_json(self):
+        return {
+            "id": self._id,
+            "sprite": self._sprite_name
+        }
 
     @property
     def id(self) -> int:
@@ -45,11 +48,11 @@ class Player(Sprite):
         self._gender = value
 
     def get_json(self):
-        name = self.sprite_name
-        id = self.id
-        gender = self.gender
-        
-        return {"name": name, "id": id, "gender": gender}
+        json_dict = super(Sprite).get_json()
+
+        json_dict['gender'] = self.gender
+
+        return json_dict
 
 
 class Pirate(Sprite):
