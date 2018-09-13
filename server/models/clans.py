@@ -30,7 +30,7 @@ class Clan(Sprite, metaclass=ABCMeta):
         self._specialized_attributes = new_specialized_attributes
 
     def get_json(self):
-        json_dict = super(Sprite).get_json()
+        json_dict = super().get_json()
 
         return json_dict
 

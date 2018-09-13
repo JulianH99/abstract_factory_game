@@ -62,6 +62,7 @@ class Player(Sprite):
     def gender(self, value):
         self._gender = value
 
+
     @property
     def complete_sprite(self) -> str:
         return self._complete_sprite_name
@@ -70,8 +71,8 @@ class Player(Sprite):
     def complete_sprite(self, new_value: str):
         self._complete_sprite_name = new_value
 
-    def get_json(self) -> Dict:
-        json_dict = super(Sprite).get_json()
+    def get_json(self):
+        json_dict = super().get_json()
 
         json_dict['gender'] = self.gender
 
