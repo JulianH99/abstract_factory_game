@@ -30,15 +30,9 @@ class Clan(Sprite, metaclass=ABCMeta):
         self._specialized_attributes = new_specialized_attributes
 
     def get_json(self):
-        name = self.name
-        id = self.id
+        json_dict = super(Sprite).get_json()
 
-        return {
-            "name": name,
-            "id": id,
-            "sprite": self._sprite_name
-        }
-
+        return json_dict
 
 class Kuirk(Clan):
     """

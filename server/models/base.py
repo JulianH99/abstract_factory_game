@@ -70,10 +70,9 @@ class Pirate(Sprite):
         self._ship = ship
 
     def get_json(self):
-        return {
-            'ship': self._ship.get_json()
-        }
-
+        json_dict = super(Sprite).get_json()
+        json_dict['ship'] = self._ship.get_json
+        return json_dict
 
 class User:
     __name: str
